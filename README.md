@@ -10,5 +10,5 @@
 
 **deployment.yaml** - to deploy a simple node application 
  
- - kubectl apply -f deployment
+ - kubectl apply -f deployment.yaml
  
