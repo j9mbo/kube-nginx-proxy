@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-fwd
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-fwd
+  template:
+    metadata:
+      labels:
+        app: nginx-fwd
+    spec:
+      containers:
+      - name: nginx
+        image: hinata/nginx-forward-proxy
+        ports:
+        - containerPort: 3128
+        readinessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - curl ifconfig.me
+        livenessProbe:
+          httpGet:
+            host: 127.0.0.1
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 3
