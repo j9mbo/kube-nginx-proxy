@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx-fwd
   labels:
-    app: nginx
+    app: nginx-fwd
 spec:
   replicas: 5
   strategy:
@@ -20,7 +20,7 @@ spec:
         app: nginx-fwd
     spec:
       containers:
-      - name: nginx
+      - name: nginx-fwd
         image: hinata/nginx-forward-proxy
         ports:
         - containerPort: 3128
