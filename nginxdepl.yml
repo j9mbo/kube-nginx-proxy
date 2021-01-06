@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: nginx-fwd
-        image: hinata/nginx-forward-proxy
+        image: j9mbo/nginx-fwd-proxy
         ports:
         - containerPort: 3128
         readinessProbe:
@@ -36,8 +36,8 @@ spec:
           initialDelaySeconds: 15
           failureThreshold: 5
           httpGet:
-            host: 10.1.0.152
-            port: 5000
+            host: ifconfig.me
+            port: 80
           periodSeconds: 5
           failureThreshold: 5
           successThreshold: 1
