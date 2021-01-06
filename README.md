@@ -13,7 +13,7 @@
  - kubectl apply -f deployment.yaml
 
 To change the version of the image
- - kubectl set image deployment.apps/nginx-fwd nginx-fwd=j9mbo/nginx-fwd-proxy:v1 
+ - kubectl set image deployment.apps/nginx-fwd nginx-fwd=j9mbo/nginx-fwd-proxy:v1 -n=production/development
 
 **dev.sh** - script to deploy the deployment in development mode
 
