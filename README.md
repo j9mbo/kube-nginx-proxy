@@ -11,7 +11,15 @@
 **deployment.yaml** - to deploy a simple node application 
  
  - kubectl apply -f deployment.yaml
- 
+
+To change the version of the image
+ - kubectl set image deployment.apps/nginx-fwd nginx-fwd=j9mbo/nginx-fwd-proxy:v1 
+
+**dev.sh** - script to deploy the deployment in development mode
+
+**prod.sh** - script to deploy the deployment into production
+
+
 Example for curl
 ----------------
 ```
