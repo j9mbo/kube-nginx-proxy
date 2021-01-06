@@ -19,6 +19,9 @@ To change the version of the image
 
 **prod.sh** - script to deploy the deployment into production
 
+**prod.yaml** - to create production namespace
+
+**dev.yaml** - to create development namespace
 
 Example for curl
 ----------------
